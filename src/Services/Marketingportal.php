@@ -7,7 +7,7 @@ namespace Cornatul\Marketing\Base\Services;
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Contracts\Foundation\Application;
 
-class Sendportal
+class Marketingportal
 {
     /** @var Application */
     private $app;
@@ -54,7 +54,7 @@ class Sendportal
      */
     public function setCurrentWorkspaceIdResolver(callable $resolver): void
     {
-        $this->app->make('sendportal.resolver')->setCurrentWorkspaceIdResolver($resolver);
+        $this->app->make('marketing.resolver')->setCurrentWorkspaceIdResolver($resolver);
     }
 
     /**
@@ -62,7 +62,7 @@ class Sendportal
      */
     public function currentWorkspaceId(): ?int
     {
-        return $this->app->make('sendportal.resolver')->resolveCurrentWorkspaceId();
+        return $this->app->make('marketing.resolver')->resolveCurrentWorkspaceId();
     }
 
     /**
@@ -70,7 +70,7 @@ class Sendportal
      */
     public function setSidebarHtmlContentResolver(callable $resolver): void
     {
-        $this->app->make('sendportal.resolver')->setSidebarHtmlContentResolver($resolver);
+        $this->app->make('marketing.resolver')->setSidebarHtmlContentResolver($resolver);
     }
 
     /**
@@ -78,7 +78,7 @@ class Sendportal
      */
     public function sidebarHtmlContent(): ?string
     {
-        return $this->app->make('sendportal.resolver')->resolveSidebarHtmlContent();
+        return $this->app->make('marketing.resolver')->resolveSidebarHtmlContent();
     }
 
     /**
@@ -86,7 +86,7 @@ class Sendportal
      */
     public function setHeaderHtmlContentResolver(callable $resolver): void
     {
-        $this->app->make('sendportal.resolver')->setHeaderHtmlContentResolver($resolver);
+        $this->app->make('marketing.resolver')->setHeaderHtmlContentResolver($resolver);
     }
 
     /**
@@ -94,6 +94,6 @@ class Sendportal
      */
     public function headerHtmlContent(): ?string
     {
-        return $this->app->make('sendportal.resolver')->resolveHeaderHtmlContent();
+        return $this->app->make('marketing.resolver')->resolveHeaderHtmlContent();
     }
 }
