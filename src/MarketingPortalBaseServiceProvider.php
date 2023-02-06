@@ -3,6 +3,7 @@
 namespace Cornatul\Marketing\Base;
 
 use Cornatul\Marketing\Base\Providers\MarketingPortalAppServiceProvider;
+use Cornatul\Marketing\Base\Services\Marketingportal;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
@@ -68,7 +69,7 @@ class MarketingPortalBaseServiceProvider extends ServiceProvider
 
         // Facade.
         $this->app->bind('marketing', static function (Application $app) {
-            return $app->make(Sendportal::class);
+            return $app->make(Marketingportal::class);
         });
 
         $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'marketing');
