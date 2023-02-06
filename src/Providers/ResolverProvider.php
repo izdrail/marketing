@@ -17,7 +17,7 @@ class ResolverProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('sendportal.resolver', function () {
+        $this->app->singleton('marketing.resolver', function () {
             return new ResolverService();
         });
     }
