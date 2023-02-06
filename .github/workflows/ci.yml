@@ -9,7 +9,7 @@ jobs:
           "kirschbaumdevelopment/laravel-test-runner:7.3",
           "kirschbaumdevelopment/laravel-test-runner:7.4",
           "kirschbaumdevelopment/laravel-test-runner:8.0",
-          "kirschbaumdevelopment/laravel-test-runner:9.0",
+          "kirschbaumdevelopment/laravel-test-runner:8.1",
 
         ]
 

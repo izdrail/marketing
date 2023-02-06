@@ -71,13 +71,13 @@ class EmailService extends BaseModel
         return $this->hasMany(Campaign::class, 'email_service_id');
     }
 
-    /**
-     * Automations using this email service.
-     */
-    public function automations(): HasMany
-    {
-        return $this->hasMany(Automation::class, 'email_service_id');
-    }
+//    /**
+//     * Automations using this email service.
+//     */
+//    public function automations(): HasMany
+//    {
+//        return $this->hasMany(Automation::class, 'email_service_id');
+//    }
 
     public function setSettingsAttribute(array $data): void
     {

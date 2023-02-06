@@ -29,8 +29,6 @@ class Helper
 
     public function isPro(): bool
     {
-        //todo replace this to MarketingProvider
-       // return class_exists(\Cornatul\Marketing\SendportalProServiceProvider::class);
-        return true;
+        return false;
     }
 }

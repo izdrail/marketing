@@ -31,7 +31,7 @@
             </a>
         </li>
 
-        {!! \Cornatul\Marketing\Base\Facades\Sendportal::sidebarHtmlContent() !!}
+        {!! \Cornatul\Marketing\Base\Facades\MarketingPortal::sidebarHtmlContent() !!}
 
     </ul>
 </div>

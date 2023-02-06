@@ -8,7 +8,7 @@
 
         <h1 class="h3 mb-0">@yield('heading')</h1>
 
-        {!! \Cornatul\Marketing\Base\Facades\Sendportal::headerHtmlContent() !!}
+        {!! \Cornatul\Marketing\Base\Facades\MarketingPortal::headerHtmlContent() !!}
 
     </header>
 </div>
