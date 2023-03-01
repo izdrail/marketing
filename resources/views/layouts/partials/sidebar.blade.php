@@ -48,7 +48,7 @@
 
         <li class="nav-item {{ request()->is('*wordpress*') ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('wordpress.index') }}">
-                <i class="fa-fw fas fa-wordpress mr-2"></i><span>{{ __('Wordpress') }}</span>
+                <i class="fa-fw fas fa-blog mr-2"></i><span>{{ __('Wordpress') }}</span>
             </a>
         </li>
 
