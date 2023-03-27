@@ -54,5 +54,27 @@
 
         <?php endif; ?>
 
+        <?php if(class_exists(\Cornatul\News\NewsServiceProvider::class)): ?>
+
+        <li class="nav-item {{ request()->is('*news*') ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('news.index') }}">
+                <i class="fa-fw fas fa-newspaper mr-2"></i><span>{{ __('News') }}</span>
+            </a>
+        </li>
+
+        <?php endif; ?>
+
+
+        <?php if(class_exists(\Cornatul\Social\SocialServiceProvider::class)): ?>
+
+        <li class="nav-item {{ request()->is('*social*') ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('social.index') }}">
+                <i class="fa-fw fas fa-share-square mr-2"></i><span>{{ __('Social') }}</span>
+            </a>
+        </li>
+
+        <?php endif; ?>
+
+
     </ul>
 </div>

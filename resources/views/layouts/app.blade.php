@@ -8,9 +8,9 @@
 
                 <div class="mt-4">
                     <div class="logo text-center">
-                        <a href="{{ route('marketing.dashboard') }}">
-                            <img src="{{ asset('/vendor/marketing/img/logo-main.png') }}" alt="" width="175px">
-                        </a>
+                        <h3 class="text-white bold mb-0 pb-0">
+                            {{ config('app.name') }}
+                        </h3>
                     </div>
                 </div>
 

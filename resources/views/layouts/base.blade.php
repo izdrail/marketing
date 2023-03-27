@@ -17,6 +17,8 @@
     <link href="{{ asset('vendor/marketing/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset(mix('app.css', 'vendor/marketing')) }}" rel="stylesheet">
 
+    @livewireStyles
+    @rapydStyles
     @stack('css')
 
 </head>
@@ -27,6 +29,9 @@
 <script src="{{ asset('vendor/marketing/js/jquery-3.6.0.min.js') }}"></script>
 <script src="{{ asset('vendor/marketing/js/popper.min.js') }}"></script>
 <script src="{{ asset('vendor/marketing/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('vendor/rapyd-livewire/alpine.js') }}" defer></script>
+@livewireScripts
+@rapydScripts
 
 <script>
     $('.sidebar-toggle').click(function (e) {
