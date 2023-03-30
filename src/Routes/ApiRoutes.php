@@ -11,28 +11,29 @@ class ApiRoutes
     public function sendportalApiRoutes(): callable
     {
         return function () {
-            $this->name('marketing.api.')->prefix('v1')->namespace('\Cornatul\Marketing\Base\Http\Controllers\Api')->group(static function (Router $apiRouter) {
-                $apiRouter->apiResource('campaigns', 'CampaignsController');
-                $apiRouter->post('campaigns/{id}/send', 'CampaignDispatchController@send')->name('campaigns.send');
-                $apiRouter->apiResource('subscribers', 'SubscribersController');
-                $apiRouter->apiResource('tags', 'TagsController');
+            $this->name('marketing.api.')->prefix('v1')->namespace('\Cornatul\Marketing\Base\Http\Controllers\Api')
+                ->group(static function (Router $apiRouter) {
+                    $apiRouter->apiResource('campaigns', 'CampaignsController');
+                    $apiRouter->post('campaigns/{id}/send', 'CampaignDispatchController@send')->name('campaigns.send');
+                    $apiRouter->apiResource('subscribers', 'SubscribersController');
+                    $apiRouter->apiResource('tags', 'TagsController');
 
-                $apiRouter->apiResource('subscribers.tags', 'SubscriberTagsController')
+                    $apiRouter->apiResource('subscribers.tags', 'SubscriberTagsController')
                     ->except(['show', 'update', 'destroy']);
-                $apiRouter->put('subscribers/{subscriber}/tags', 'SubscriberTagsController@update')
+                    $apiRouter->put('subscribers/{subscriber}/tags', 'SubscriberTagsController@update')
                     ->name('subscribers.tags.update');
-                $apiRouter->delete('subscribers/{subscriber}/tags', 'SubscriberTagsController@destroy')
+                    $apiRouter->delete('subscribers/{subscriber}/tags', 'SubscriberTagsController@destroy')
                     ->name('subscribers.tags.destroy');
 
-                $apiRouter->apiResource('tags.subscribers', 'TagSubscribersController')
+                    $apiRouter->apiResource('tags.subscribers', 'TagSubscribersController')
                     ->except(['show', 'update', 'destroy']);
-                $apiRouter->put('tags/{tag}/subscribers', 'TagSubscribersController@update')
+                    $apiRouter->put('tags/{tag}/subscribers', 'TagSubscribersController@update')
                     ->name('tags.subscribers.update');
-                $apiRouter->delete('tags/{tag}/subscribers', 'TagSubscribersController@destroy')
+                    $apiRouter->delete('tags/{tag}/subscribers', 'TagSubscribersController@destroy')
                     ->name('tags.subscribers.destroy');
 
-                $apiRouter->apiResource('templates', 'TemplatesController');
-            });
+                    $apiRouter->apiResource('templates', 'TemplatesController');
+                });
         };
     }
 

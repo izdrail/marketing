@@ -16,19 +16,19 @@ use Cornatul\Marketing\Base\Services\Content\MergeSubjectService;
 class DispatchMessage
 {
     /** @var ResolveEmailService */
-    protected ResolveEmailService $resolveEmailService;
+    private ResolveEmailService $resolveEmailService;
 
     /** @var RelayMessage */
-    protected RelayMessage $relayMessage;
+    private RelayMessage $relayMessage;
 
     /** @var MergeContentService */
-    protected MergeContentService $mergeContentService;
+    private MergeContentService $mergeContentService;
 
     /** @var MergeSubjectService */
-    protected MergeSubjectService $mergeSubjectService;
+    private MergeSubjectService $mergeSubjectService;
 
     /** @var MarkAsSent */
-    protected MarkAsSent $markAsSent;
+    private MarkAsSent $markAsSent;
 
     public function __construct(
         MergeContentService $mergeContentService,
@@ -94,8 +94,12 @@ class DispatchMessage
     /**
      * @throws Exception
      */
-    protected function dispatch(Message $message, EmailService $emailService, MessageTrackingOptions $trackingOptions, string $mergedContent): ?string
-    {
+    protected function dispatch(
+        Message $message,
+        EmailService $emailService,
+        MessageTrackingOptions $trackingOptions,
+        string $mergedContent
+    ): ?string {
         $messageOptions = (new MessageOptions)
             ->setTo($message->recipient_email)
             ->setFromEmail($message->from_email)

@@ -28,9 +28,7 @@ class CampaignStoreRequest extends BaseCampaignStoreRequest
         $this->workspaceId = MarketingPortal::currentWorkspaceId();
 
         Validator::extendImplicit('valid_status', function ($attribute, $value, $parameters, $validator) {
-            return $this->campaign
-                ? $this->getCampaign()->status_id === CampaignStatus::STATUS_DRAFT
-                : true;
+            return !$this->campaign || $this->getCampaign()->status_id === CampaignStatus::STATUS_DRAFT;
         });
     }
 

@@ -15,20 +15,21 @@ class WebRoutes
                 Router $appRouter
             ) {
                 // Subscriptions
-                $appRouter->name('subscriptions.')->namespace('Subscriptions')->prefix('subscriptions')->group(static function (
-                    Router $subscriptionController
-                ) {
-                    $subscriptionController->get('unsubscribe/{messageHash}', 'SubscriptionsController@unsubscribe')
+                $appRouter->name('subscriptions.')->namespace('Subscriptions')->prefix('subscriptions')
+                    ->group(static function (
+                        Router $subscriptionController
+                    ) {
+                        $subscriptionController->get('unsubscribe/{messageHash}', 'SubscriptionsController@unsubscribe')
                         ->name('unsubscribe');
-                    $subscriptionController->get(
-                        'subscribe/{messageHash}',
-                        'SubscriptionsController@subscribe'
-                    )->name('subscribe');
-                    $subscriptionController->put(
-                        'subscriptions/{messageHash}',
-                        'SubscriptionsController@update'
-                    )->name('update');
-                });
+                        $subscriptionController->get(
+                            'subscribe/{messageHash}',
+                            'SubscriptionsController@subscribe'
+                        )->name('subscribe');
+                        $subscriptionController->put(
+                            'subscriptions/{messageHash}',
+                            'SubscriptionsController@update'
+                        )->name('update');
+                    });
 
                 // Webview.
                 $appRouter->name('webview.')->prefix('webview')->namespace('Webview')->group(static function (
