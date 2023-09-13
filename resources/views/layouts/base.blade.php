@@ -18,7 +18,6 @@
     <link href="{{ asset(mix('app.css', 'vendor/marketing')) }}" rel="stylesheet">
 
     @livewireStyles
-    @rapydStyles
     @stack('css')
 
 </head>
@@ -31,7 +30,6 @@
 <script src="{{ asset('vendor/marketing/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('vendor/rapyd-livewire/alpine.js') }}" defer></script>
 @livewireScripts
-@rapydScripts
 
 <script>
     $('.sidebar-toggle').click(function (e) {

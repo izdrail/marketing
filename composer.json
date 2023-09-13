@@ -10,7 +10,7 @@
         "ext-json": "*",
         "aws/aws-sdk-php-laravel": "^3.6",
         "doctrine/dbal": "^3.0",
-        "illuminate/support": "^9.0",
+        "illuminate/support": "^10.0",
         "kriswallsmith/buzz": "^1.2",
         "mailgun/mailgun-php": "^3.2",
         "mailjet/mailjet-apiv3-php": "^1.5",
