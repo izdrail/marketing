@@ -35,7 +35,7 @@ class TemplatesController extends Controller
     public function index(): AnonymousResourceCollection
     {
         $workspaceId = MarketingPortal::currentWorkspaceId();
-        $templates = $this->templates->paginate($workspaceId, 'name');
+        $templates = $this->templates->paginate($workspaceId);
 
         return TemplateResource::collection($templates);
     }

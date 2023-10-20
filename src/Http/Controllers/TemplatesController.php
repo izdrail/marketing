@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Cornatul\Marketing\Base\Http\Controllers;
 
 use Exception;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 use Cornatul\Marketing\Base\Facades\MarketingPortal;
@@ -34,9 +36,9 @@ class TemplatesController extends Controller
     /**
      * @throws Exception
      */
-    public function index(): View
+    public final function index(): Application|Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
     {
-        $templates = $this->templates->paginate(MarketingPortal::currentWorkspaceId(), 'name');
+        $templates = $this->templates->paginate(MarketingPortal::currentWorkspaceId());
 
         return view('marketing::templates.index', compact('templates'));
     }
@@ -92,5 +94,12 @@ class TemplatesController extends Controller
         return redirect()
             ->route('marketing.templates.index')
             ->with('success', __('Template successfully deleted.'));
+    }
+
+
+
+    public final function import(): Application|Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
+    {
+        return view('marketing::templates.import');
     }
 }
